@@ -10,7 +10,7 @@ class Task(TaskBase):
     done: bool = Field(False, description="完了タスク")
     
     class Config:
-        orm_mode =  True
+        from_attributes =  True # orm_modeから変更
     
 class TaskCreate(TaskBase):
     pass
@@ -19,5 +19,5 @@ class TaskCreateResponse(TaskCreate):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
         
